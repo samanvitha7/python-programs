@@ -4,13 +4,7 @@ def check_pall(word):
     operations = 0  # 
     for i in range(len(word) // 2):
         dif = ord(word[i]) - ord(word[j])
-        if dif < 0:
-            word[j] = chr(ord(word[j]) + dif)
-            operations += 1  
-        if dif > 0:
-            word[i] = chr(ord(word[i]) - dif)
-            operations += 1  
-        
+        operations+=abs(dif)
         j -= 1
     return operations
 
